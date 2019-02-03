@@ -21,7 +21,7 @@ def pinOnInRow(i, t=0.1):
         shiftRegistry(1,0)
         IO.output(ser,1)  # send a 1 to seriell input 
         time.sleep(t)     
-        IO.output(sck,1)  # SCK-Pin auf High ziehen, damit das Register anfaengt die Bits um eine Stelle zu verschieben
+        IO.output(sck,1)  # sck high to shift the bits
         time.sleep(t)     
         IO.output(sck,0)  
         IO.output(ser,0)  
@@ -44,8 +44,7 @@ def pinOffInRow(i, t=0.1):
         time.sleep(t)     
         IO.output(rck,0)    # rck low to stop the output
 
-#Excpets a dezimal integer to transform in into a 
-#     
+     
 def pinsOnBin(i):
     global pins
     for y in reversed(range(8)):
