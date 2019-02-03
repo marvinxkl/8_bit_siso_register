@@ -48,7 +48,7 @@ def pinOffInRow(i, t=0.1):
 #     
 def pinsOnBin(i):
     global pins
-    for y in range(8):
+    for y in reversed(range(8)):
         pins [y] = i%2
         i = i//2
     sendRegistry()
